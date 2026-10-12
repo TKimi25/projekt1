@@ -1,0 +1,32 @@
+---
+name: Tóth Joakim
+neptun: NV8CXW
+id: 2026-SD-02
+---
+# Társasjáték-szabálymagyarázó alkalmazás forráshivatkozásokkal
+
+## A brief értelmezése
+
+A feladat egy olyan mobilon is használható társasjáték-szabálymagyarázó webalkalmazás elkészítése amely különböző játék szabálykönyvekből keres vissza pontos forráshelyekkel alátámasztva. A felhasználó választja ki az adott játékot és a szabályváltozatot is valamint legyen képes pontosítani a helyzetet és tudja megtekinti a választ és a forrásrészleteket. A program egy LLM-en alapul ami véhzi az egész keresési szakaszt.
+
+## Miért én lennék alkalmas erre a projektre?
+
+Szeretek társasjátékokkal játszani és sokszor fordul elő egyet nem értés a játék szabállyal kapcsolatban, ezért érdekelt egy ilyen alkalmazás létrehozása amely ezt a problémát orvosolni tudja.
+
+## Releváns tapasztalat és előzmények
+
+## Tervezett megközelítés
+
+A rendszer többlépcsős hibrid kereséssel kutatja fel a legrelevánsabb szabályrészeket, majd kizárólag ezekre támaszkodva, pontos hivatkozásokkal válaszol, hiányos információ esetén pedig visszakérdez. Az elképzelés részét képezi továbbá egy alapos kutatási és tesztelési módszertan is, amely biztonságos, konténerizált környezetben garantálja a pontos, hallucinációmentes és adatvesztés nélküli működést.
+
+## Kezdeti terv
+
+1. Inteligens feldolgozás: A szabálykönyveket nem vágja szét vaktában; logikai egységek, fejezetek, bekezdések mentén darabol
+2. Többlépcsős hibrid keresés: Egyesíti a kulcsszavas (pontos kifejezések) és a szemantikus (jelentésalapú) keresést, majd a találatokat egy külön modell rangsorolja újra a maximális pontosság érdekében.
+3. Szigorú válaszgenerálás: Az MI modell kizárólag a kikeresett forrásokra támaszkodhat. Pontosan hivatkozza a szakaszt és az oldalszámot, és automatikusan visszakérdez, ha a felhasználó kérdése hiányos, vagy ellentmondásos szabályokat talál.
+4. Adatalapú kiértékelés: A rendszer teljesítményét egy kézzel ellenőrzött teszthalmazon mérik, amellyel bizonyítható, hogy a strukturált RAG megközelítés mennyivel múlja felül az egyszerű keresést.
+5. Biztonságos és stabil architektúra: Modern, konténerizált környezet (Docker, relációs- és vektoradatbázisok) biztosítja, hogy a szolgáltatáskulcsok rejtve maradjanak, és esetleges MI-leállás esetén se vesszenek el a felhasználói kérdések.
+
+## További információ
+
+A Git repóban vezetem a munkát, létrehozva egy futtatási útmutatóval, mintaadatokkal és reprodukálható értékelési eljárással és issue-k segítségével követném a feladatokat.
